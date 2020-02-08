@@ -35,11 +35,32 @@ body::-webkit-scrollbar-thumb:hover {
 /********** VARIABLES **********/
 :root {
   --color-primary: #ec8b06;
+  --color-text: #393939;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --border: 1rem solid #ec8b06;
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --border-radius: 0.5rem;
 }
 
-/********** UTILITIES **********/
+/********** GENERAL **********/
 span {
   color: var(--color-primary);
+}
+
+.content {
+  position: relative;
+  max-width: 110rem;
+  height: 100%;
+  margin: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.heading {
+  color: var(--color-text);
+  font-size: 3rem;
+  text-align: center;
+  margin: 10rem auto 10rem auto;
 }
 
 /********** HOME **********/
@@ -51,6 +72,7 @@ span {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  border-bottom: var(--border);
 }
 
 .home__gradient {
@@ -65,21 +87,17 @@ span {
   );
 }
 
-.home__content {
-  position: relative;
-  max-width: 110rem;
-  height: 100%;
-  margin: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
 .home__nav {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 
+@media only screen and (max-width: 650px) {
+  .home__logo {
+    margin-top: 2rem;
+  }
+}
 .home__list {
   display: flex;
   margin-top: 8rem;
@@ -102,6 +120,11 @@ span {
   text-decoration: none;
   text-transform: uppercase;
   margin-left: 3rem;
+  transition: var(--transition);
+}
+
+.home__link:hover {
+  color: var(--color-primary);
 }
 
 .home__text {
@@ -116,34 +139,149 @@ span {
   text-align: center;
 }
 
-.home__text-up {
+.home__text--up {
   font-size: 9rem;
   text-transform: uppercase;
 }
 
 @media only screen and (max-width: 1200px) {
-  .home__text-up {
+  .home__text--up {
     font-size: 5rem;
   }
 }
 
-.home__text-down {
+@media only screen and (max-width: 650px) {
+  .home__name {
+    letter-spacing: 3px;
+  }
+}
+
+.home__text--down {
   font-size: 2.4rem;
   letter-spacing: 1.7px;
 }
 
 @media only screen and (max-width: 1200px) {
-  .home__text-down {
+  .home__text--down {
     font-size: 1.4rem;
     letter-spacing: 0.5px;
   }
 }
 
 @media only screen and (max-width: 650px) {
-  .home__text-down {
-    /* background-color: red; */
+  .home__text--down {
     max-width: 33rem;
     margin: auto;
     text-align: justify;
   }
+}
+
+.info__block {
+  display: flex;
+  justify-content: space-between;
+  transition: var(--transition);
+  transition: 2s ease;
+}
+
+.info__block:hover > * {
+  opacity: 0.5;
+  transform: scale(0.995);
+}
+
+.info__block:hover > *:hover {
+  opacity: 1;
+  transform: scale(1.005);
+  background-color: rgba(236, 139, 6, 0.05);
+}
+
+.info__block--item {
+  padding: 2rem;
+  max-width: 33rem;
+  border-radius: var(--border-radius);
+  color: var(--color-text);
+  text-align: justify;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  transition: var(--transition);
+}
+
+.info__block--item::before {
+  content: "\f058";
+  display: block;
+  color: #ec8b06;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ec8b06;
+  padding-bottom: 5rem;
+  padding-top: 3rem;
+}
+
+.info__grid {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, auto);
+  font-size: 1.5rem;
+  margin: auto;
+}
+
+.info__grid:hover > * {
+  opacity: 0.5;
+  transform: scale(0.99);
+}
+
+.info__grid:hover > *:hover {
+  transform: scale(1.01);
+  background-color: rgba(236, 139, 6, 0.05);
+  opacity: 1;
+}
+
+.info__grid--item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  color: var(--color-text);
+  line-height: 2.5rem;
+  padding: 5rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.fas {
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+.gallery__images {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #ec8b06;
+  border: 1rem solid #ec8b06;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-top: 10rem;
+}
+
+.gallery__img {
+  width: 100%;
+  height: 25rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+}
+
+.gallery__img:hover {
+  transform: scale(1.5);
+  z-index: 2;
+  box-shadow: var(--box-shadow);
 }
