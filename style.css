@@ -36,6 +36,7 @@ body::-webkit-scrollbar-thumb:hover {
 :root {
   --color-primary: #ec8b06;
   --color-text: #393939;
+  --color-dark: #2c2c2c;
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   --border: 1rem solid #ec8b06;
   --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -45,6 +46,13 @@ body::-webkit-scrollbar-thumb:hover {
 /********** GENERAL **********/
 span {
   color: var(--color-primary);
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
 }
 
 .content {
@@ -61,6 +69,12 @@ span {
   font-size: 3rem;
   text-align: center;
   margin: 10rem auto 10rem auto;
+}
+
+@media only screen and (max-width: 900px) {
+  .heading {
+    margin: 5rem auto 5rem auto;
+  }
 }
 
 /********** HOME **********/
@@ -93,11 +107,19 @@ span {
   align-items: flex-end;
 }
 
+@media only screen and (max-width: 1200px) {
+  .home__logo {
+    width: 8rem;
+  }
+}
+
 @media only screen and (max-width: 650px) {
   .home__logo {
     margin-top: 2rem;
+    width: 8rem;
   }
 }
+
 .home__list {
   display: flex;
   margin-top: 8rem;
@@ -183,6 +205,13 @@ span {
   transition: 2s ease;
 }
 
+@media only screen and (max-width: 900px) {
+  .info__block {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .info__block:hover > * {
   opacity: 0.5;
   transform: scale(0.995);
@@ -203,6 +232,12 @@ span {
   font-size: 1.5rem;
   line-height: 2.5rem;
   transition: var(--transition);
+}
+
+@media only screen and (max-width: 900px) {
+  .info__block--item {
+    max-width: 60rem;
+  }
 }
 
 .info__block--item::before {
@@ -226,6 +261,12 @@ span {
   grid-template-rows: repeat(3, auto);
   font-size: 1.5rem;
   margin: auto;
+}
+
+@media only screen and (max-width: 900px) {
+  .info__grid {
+    grid-template-columns: repeat(2, auto);
+  }
 }
 
 .info__grid:hover > * {
@@ -252,6 +293,18 @@ span {
   transition: var(--transition);
 }
 
+@media only screen and (max-width: 900px) {
+  .info__grid--item {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .info__grid--last {
+    display: none;
+  }
+}
+
 .fas {
   color: var(--color-primary);
   margin-bottom: 2rem;
@@ -270,6 +323,12 @@ span {
   margin-top: 10rem;
 }
 
+@media only screen and (max-width: 900px) {
+  .gallery__images {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .gallery__img {
   width: 100%;
   height: 25rem;
@@ -280,23 +339,49 @@ span {
   border-radius: var(--border-radius);
 }
 
+@media only screen and (max-width: 900px) {
+  .gallery__img {
+    height: 20rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .gallery__img {
+    height: 10rem;
+  }
+}
+
 .gallery__img:hover {
   transform: scale(1.5);
   z-index: 2;
   box-shadow: var(--box-shadow);
 }
 
+@media only screen and (max-width: 1200px) {
+  .gallery__img:hover {
+    transform: scale(1);
+  }
+}
+
 .contact {
   width: 100%;
   border-top: var(--border);
   margin-top: 10rem;
-  background-color: #2c2c2c;
+  background-color: var(--color-dark);
 }
 
 .contact__content {
   display: flex;
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .contact__content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .contact__left {
@@ -309,11 +394,23 @@ span {
   flex-direction: column;
 }
 
+@media only screen and (max-width: 650px) {
+  .contact__left {
+    margin-top: 0;
+  }
+}
+
 .contact__logo {
   width: 10rem;
   height: auto;
   margin-bottom: 5rem;
   margin-left: 1.5rem;
+}
+
+@media only screen and (max-width: 650px) {
+  .contact__logo {
+    margin-bottom: 3rem;
+  }
 }
 
 .contact__personal--item {
@@ -331,8 +428,6 @@ span {
   margin: 0.5rem;
   font-size: 2rem;
   color: var(--color-primary);
-  border-radius: var(--border-radius);
-  cursor: pointer;
 }
 
 .contact__social--icon {
@@ -350,6 +445,12 @@ span {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 650px) {
+  .contact__social--icon {
+    margin-top: 3rem;
+  }
+}
+
 .contact__social--icon:hover {
   color: #fff;
 }
@@ -360,11 +461,31 @@ span {
 
 .contact__right {
   flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact__map {
   border: 1rem solid #ec8b06;
-  width: 60rem;
-  height: 40rem;
+  max-width: 60rem;
+  width: 100%;
+  height: 100%;
+  max-height: 40rem;
   border-radius: 0.5rem;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-dark);
+}
+
+.copyright__message {
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  padding-bottom: 3rem;
+  text-align: center;
 }
