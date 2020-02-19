@@ -13,6 +13,10 @@ html {
   font-family: "Open Sans", sans-serif;
 }
 
+*::selection {
+  color: #fff;
+  background-color: var(--color-primary);
+}
 /********** SCROLLBAR **********/
 body::-webkit-scrollbar {
   width: 1em;
@@ -28,7 +32,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 body::-webkit-scrollbar-thumb:hover {
-  background-color: hsl(35, 95%, 45%);
+  background-color: hsl(35, 95%, 55%);
   outline: 1px solid slategrey;
 }
 
@@ -87,6 +91,57 @@ a:active {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   border-bottom: var(--border);
+  transition: 0.1s;
+
+  animation-name: slider;
+  animation-direction: alternate-reverse;
+  animation-duration: 30s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slider {
+  0% {
+    background-image: url(img/img-1.jpg);
+  }
+  12% {
+    background-image: url(img/img-1.jpg);
+  }
+  15% {
+    background-image: url(img/img-2.jpg);
+  }
+  27% {
+    background-image: url(img/img-2.jpg);
+  }
+  30% {
+    background-image: url(img/img-3.jpg);
+  }
+  42% {
+    background-image: url(img/img-3.jpg);
+  }
+  45% {
+    background-image: url(img/img-5.jpg);
+  }
+  57% {
+    background-image: url(img/img-5.jpg);
+  }
+  60% {
+    background-image: url(img/img-8.jpg);
+  }
+  72% {
+    background-image: url(img/img-8.jpg);
+  }
+  75% {
+    background-image: url(img/img-18.jpg);
+  }
+  87% {
+    background-image: url(img/img-18.jpg);
+  }
+  90% {
+    background-image: url(img/img-1.jpg);
+  }
 }
 
 .home__gradient {
@@ -105,6 +160,10 @@ a:active {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+.home__logo {
+  width: 10rem;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -198,6 +257,7 @@ a:active {
   }
 }
 
+/********** INFORMATION **********/
 .info__block {
   display: flex;
   justify-content: space-between;
@@ -243,13 +303,13 @@ a:active {
 .info__block--item::before {
   content: "\f058";
   display: block;
-  color: #ec8b06;
+  color: var(--color-primary);
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   text-align: center;
   font-size: 5rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #ec8b06;
+  border-bottom: 1px solid var(--color-primary);
   padding-bottom: 5rem;
   padding-top: 3rem;
 }
@@ -300,7 +360,7 @@ a:active {
 }
 
 @media only screen and (max-width: 900px) {
-  .info__grid--last {
+  .info__grid--item:last-of-type {
     display: none;
   }
 }
@@ -311,16 +371,17 @@ a:active {
   font-size: 3rem;
 }
 
+/********** GALLERY **********/
 .gallery__images {
   display: grid;
   grid-gap: 1rem;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: #ec8b06;
-  border: 1rem solid #ec8b06;
+  margin-top: 10rem;
+  background-color: var(--color-primary);
+  border: var(--border);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  margin-top: 10rem;
 }
 
 @media only screen and (max-width: 900px) {
@@ -363,6 +424,7 @@ a:active {
   }
 }
 
+/********** CONTACT **********/
 .contact {
   width: 100%;
   border-top: var(--border);
@@ -430,6 +492,48 @@ a:active {
   color: var(--color-primary);
 }
 
+.contact__social a {
+  color: #fff;
+  position: relative;
+}
+
+.contact__social a:hover::after {
+  position: absolute;
+  font-size: 1.5rem;
+  font-family: "Open Sans", sans-serif;
+
+  width: 7rem;
+  height: 2rem;
+  padding: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 4rem;
+  left: -2rem;
+
+  background-color: #1b1b1b;
+  color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.contact__social a:nth-of-type(1):hover::after {
+  content: "Airbnb";
+}
+
+.contact__social a:nth-of-type(2):hover::after {
+  content: "Booking";
+}
+
+.contact__social a:nth-of-type(3):hover::after {
+  content: "Instagram";
+}
+
+.contact__social a:nth-of-type(4):hover::after {
+  content: "Facebook";
+}
+
 .contact__social--icon {
   width: 2rem;
   height: 2rem;
@@ -437,11 +541,11 @@ a:active {
   margin: 0.5rem;
   margin-top: 5rem;
   font-size: 2rem;
-  color: #ec8b06;
+  color: var(--color-primary);
   border-radius: 0.5rem;
   background-color: #1b1b1b;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
   cursor: pointer;
 }
 
@@ -455,10 +559,6 @@ a:active {
   color: #fff;
 }
 
-.contact__social--icon:active {
-  box-shadow: none;
-}
-
 .contact__right {
   flex: 1;
   width: 100%;
@@ -468,7 +568,7 @@ a:active {
 }
 
 .contact__map {
-  border: 1rem solid #ec8b06;
+  border: var(--border);
   max-width: 60rem;
   width: 100%;
   height: 100%;
