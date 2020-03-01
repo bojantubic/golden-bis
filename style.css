@@ -94,8 +94,7 @@ a:active {
   transition: 0.1s;
 
   animation-name: slider;
-  animation-direction: alternate-reverse;
-  animation-duration: 30s;
+  animation-duration: 5s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-play-state: running;
@@ -106,41 +105,38 @@ a:active {
   0% {
     background-image: url(img/img-1.jpg);
   }
-  12% {
+  13% {
     background-image: url(img/img-1.jpg);
   }
-  15% {
+  17% {
     background-image: url(img/img-2.jpg);
   }
-  27% {
+  31% {
     background-image: url(img/img-2.jpg);
   }
-  30% {
+  34% {
     background-image: url(img/img-3.jpg);
   }
-  42% {
+  48% {
     background-image: url(img/img-3.jpg);
   }
-  45% {
+  51% {
     background-image: url(img/img-5.jpg);
   }
-  57% {
+  65% {
     background-image: url(img/img-5.jpg);
   }
-  60% {
+  68% {
     background-image: url(img/img-8.jpg);
   }
-  72% {
+  82% {
     background-image: url(img/img-8.jpg);
   }
-  75% {
+  85% {
     background-image: url(img/img-18.jpg);
   }
-  87% {
+  97% {
     background-image: url(img/img-18.jpg);
-  }
-  90% {
-    background-image: url(img/img-1.jpg);
   }
 }
 
