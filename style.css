@@ -176,7 +176,7 @@ a:active {
   .home__btn {
     display: block;
     right: 3rem;
-    top: 4.3rem;
+    top: 4rem;
     width: 4rem;
     height: 4rem;
     cursor: pointer;
@@ -198,7 +198,7 @@ a:active {
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
-    height: 0.5rem;
+    height: 0.4rem;
     background-color: #fff;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -210,7 +210,7 @@ a:active {
     content: "";
     position: absolute;
     width: 100%;
-    height: 0.5rem;
+    height: 0.4rem;
     background-color: #fff;
     border-radius: var(--border-radius);
     transition: var(--transition);
