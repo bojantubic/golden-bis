@@ -187,10 +187,10 @@ a:active {
   }
 
   .home__btn:hover .home__btn--line::before {
-    transform: translateY(-1.5rem);
+    transform: translateY(-1.25rem);
   }
   .home__btn:hover .home__btn--line::after {
-    transform: translateY(1.5rem);
+    transform: translateY(1.25rem);
   }
 
   .home__btn--line {
@@ -198,7 +198,7 @@ a:active {
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
-    height: 0.4rem;
+    height: 0.3rem;
     background-color: #fff;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -210,18 +210,18 @@ a:active {
     content: "";
     position: absolute;
     width: 100%;
-    height: 0.4rem;
+    height: 0.3rem;
     background-color: #fff;
     border-radius: var(--border-radius);
     transition: var(--transition);
   }
 
   .home__btn--line::before {
-    transform: translateY(-1.2rem);
+    transform: translateY(-1rem);
   }
 
   .home__btn--line::after {
-    transform: translateY(1.2rem);
+    transform: translateY(1rem);
   }
 
   .home__btn.active .home__btn--line {
@@ -266,7 +266,7 @@ a:active {
 
 .home__list {
   display: flex;
-  margin-top: 8rem;
+  margin-top: 5rem;
   margin-bottom: 2rem;
   justify-content: space-between;
   list-style-type: none;
