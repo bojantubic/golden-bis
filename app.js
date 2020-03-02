@@ -21,9 +21,9 @@ btn.addEventListener("click", () => {
 });
 
 list.addEventListener("click", () => {
-  btn.classList.toggle("active");
-  gradient.classList.toggle("active");
-  list.classList.toggle("active");
-  logo.classList.toggle("active");
+  btn.classList.remove("active");
+  gradient.classList.remove("active");
+  list.classList.remove("active");
+  logo.classList.remove("active");
   menuActive = false;
 });
