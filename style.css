@@ -73,6 +73,10 @@ a:active {
   border-bottom: 1px solid var(--color-primary);
 }
 
+.underline:hover {
+  border-bottom: 2px solid var(--color-primary);
+}
+
 .heading {
   color: var(--color-text);
   font-size: 3rem;
