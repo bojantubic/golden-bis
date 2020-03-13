@@ -1,3 +1,4 @@
+//Navigation
 const btn = document.querySelector(".home__btn"),
   gradient = document.querySelector(".home__gradient"),
   list = document.querySelector(".home__list"),
@@ -23,3 +24,14 @@ btn.addEventListener("click", () => {
       logo.classList.remove("active"),
       (menuActive = !1);
   });
+// Passive Listener
+var supportsPassive = false;
+try {
+    var opts = Object.defineProperty({}, 'passive', {
+        get: function() {
+            supportsPassive = true;
+        }
+    });
+    window.addEventListener("testPassive", null, opts);
+    window.removeEventListener("testPassive", null, opts);
+} catch (e) {}
